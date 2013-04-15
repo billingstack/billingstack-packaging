@@ -1,0 +1,69 @@
+Source: billingstack
+Maintainer: Endre Karlson <endre.karlson@gmail.com>
+Section: web
+Priority: extra
+Build-Depends: debhelper (>= 7), git | git-core,
+               libmysqlclient-dev, libpq-dev, pkg-config,
+               libsqlite3-dev
+Build-Depends-Indep:
+    python-setuptools
+Homepage: http://www.billingstack.org/
+Standards-Version: 3.9.4
+X-Python-Version: >= 2.6
+Vcs-Git: https://github.com/billingstack/billingstack.git
+Vcs-Browser: https://github.com/billingstack/billingstack
+
+Package: billingstack
+Architecture: any
+Section: web
+Priority: extra
+Depends:
+    billingstack-common (= ${binary:Version}),
+    billingstack-central (= ${binary:Version}),
+    billingstack-api (= ${binary:Version}),
+    ${misc:Depends}
+Recommends: foreman-proxy
+Description: Subscription based billing
+
+Package: billingstack-central
+Architecture: all
+Section: web
+Priority: extra
+Depends:
+    billingstack, libmysqlclient-dev, ${misc:Depends}
+Description: BS Virtual
+  BS Virtual
+
+Package: billingstack-common
+Architecture: all
+Depends:
+    python-billingstack (= ${binary:Version}),
+    python-pyparsing,
+    ${misc:Depends}
+Description: BS Common
+ BS Common
+
+Package: billingstack-api
+Architecture: all
+Depends:
+    python-billingstack (= ${binary:Version}),
+    billingstack-common (= ${binary:Version}),
+    ${python:Depends},
+    ${misc:Depends}
+Description: billingstack api
+  billingstack-api
+
+Package: python-billingstack
+Architecture: all
+Depends:
+    ${python:Depends},
+    ${misc:Depends}
+Recommends:
+    python-sqlalchemy,
+    python-alembic,
+    python-kombu
+Provides:
+    ${python:Provides}
+XB-Python-Version: ${python:Versions}
+Description: BillingStack Python Libraries
+ BillingStack Python Libraries

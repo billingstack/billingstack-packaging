@@ -1,0 +1,22 @@
+This package was debianized by Endre Karlson<endre.karlson@gmail.com>
+on Sun, 14 April 2013 18:29:00 -0800
+
+It was downloaded from: http://www.theforeman.org/
+
+Upstream Author(s):
+
+	Endre Karlson
+
+Copyright:
+
+       Copyright (C) 2013 Endre Karlson
+
+License: GPL-3
+
+	On any Debian system, you can find the complete text of the GNU GPL
+	(GNU General Public License) in the file '/usr/share/common-licenses/GPL-3'.
+
+Packaging:
+
+	Copyright (C) 2010 by Endre Karlson<endre.karlson@gmail.com>
+	released under the GPL-3, see '/usr/share/common-licenses/GPL-3'.
