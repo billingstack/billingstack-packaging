@@ -8,15 +8,27 @@ set -x
 # * the freight::client class in foreman-infra
 # * the web node (server2) must have the freight class applied
 
-COMPONENT="$1"
-DISTRO="$2"
+DISTRO="$1"
+COMPONENT="$2"
 DEB_PATH="$3"
 
-# The path is important, as freight_rsync (which is run on the web node for incoming
-# transfers) will parse the path to figure out the repo to send debs to.
-TARGET_PATH="freight@server2.theforeman.org:rsync_cache/$DISTRO/$COMPONENT/"
+SSH_KEY=~/ssh_key_freight
+USER=freight
+HOST=cloudistic.me
+
+
+TARGET_PATH=rsync_cache/$DISTRO/$COMPONENT/
+echo "$COMPONENT $DISTRO $DEB_PATH $TARGET_PATH"
 
 # Export this to avoid quoting issues
-export RSYNC_RSH="ssh -i /var/lib/workspace/workspace/ssh_key_freight"
+SSH_CON="$USER@$HOST"
+SSH="ssh -i $SSH_KEY"
 
-/usr/bin/rsync -avPx $DEB_PATH/*deb $TARGET_PATH
+# Set the RSYNC_RSH for rsync
+export RSYNC_RSH=$SSH
+
+# Create the directory
+#$SSH $SSH_CON "mkdir -p $TARGET_PATH"
+
+
+/usr/bin/rsync -avPx $DEB_PATH/*deb $SSH_CON:$TARGET_PATH
