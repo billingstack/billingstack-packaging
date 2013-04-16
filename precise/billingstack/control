@@ -29,7 +29,10 @@ Architecture: all
 Section: web
 Priority: extra
 Depends:
-    billingstack, libmysqlclient-dev, ${misc:Depends}
+    python-billingstack (= ${binary:Version}),
+    billingstack-common (= ${binary:Version}),
+    ${python:Depends},
+    ${misc:Depends}
 Description: BS Virtual
   BS Virtual
 
