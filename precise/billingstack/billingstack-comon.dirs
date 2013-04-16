@@ -1,5 +1,0 @@
-etc/billingstack
-etc/billingstack/conf.d
-var/lib/billingstack
-var/log/billingstack
-usr/share/billingstack
