@@ -22,7 +22,6 @@ Depends:
     billingstack-central (= ${binary:Version}),
     billingstack-api (= ${binary:Version}),
     ${misc:Depends}
-Recommends: foreman-proxy
 Description: Subscription based billing
 
 Package: billingstack-central
