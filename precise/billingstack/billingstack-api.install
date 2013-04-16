@@ -1,1 +1,3 @@
+etc/billingstack/api-paste.ini /usr/share/billingstack
+etc/billingstack/policy.json /usr/share/billingstack
 usr/bin/billingstack-api
