@@ -1,0 +1,2 @@
+/usr/share/billingstack/billingstack.conf.sample /etc/billingstack/billingstack.conf
+/usr/share/billingstack/policy.json /etc/billingstack/policy.json
