@@ -1,2 +1,2 @@
-/usr/share/billingstack/api-paste.ini.sample /etc/billingstack/api-paste.ini.sample
+/usr/share/billingstack/api-paste.ini.sample /etc/billingstack/api-paste.ini
 /usr/share/billingstack/policy.json /etc/billingstack/policy.json
